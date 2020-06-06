@@ -24,9 +24,9 @@ const DropdownSelect = (props: Props) => {
     />
   ));
 
-  return (
-    <div className="dropdown-select">{options}</div>
-  );
+  const selectEl = options.length > 0 ? <div className="dropdown-select">{options}</div> : null;
+
+  return selectEl;
 };
 
 export default DropdownSelect;
