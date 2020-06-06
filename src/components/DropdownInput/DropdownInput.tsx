@@ -17,6 +17,7 @@ const DropdownInput = (props: Props) => {
     onResetOptionValue,
     onQueryIsEmpty,
   } = props;
+
   const updateCurrentVal = (val: string) => {
     onResetOptionValue();
     setCurrentVal(val);
@@ -36,7 +37,7 @@ const DropdownInput = (props: Props) => {
       type="text"
       className='dropdown-input'
       placeholder="Type something..."
-      onChange={(e) => updateCurrentVal(e.target.value)}
+      onChange={(e) => updateCurrentVal(e.target.value.trim())}
       value={value}
     />
   );

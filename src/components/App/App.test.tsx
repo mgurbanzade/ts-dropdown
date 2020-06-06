@@ -1,9 +1,13 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, wait } from '@testing-library/react';
+import axiosMock from 'axios';
 import App from './App';
+import { getStreetsEndpoint } from '../../utils/routes';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('App', () => {
+  it('fetches streets', async () => {
+    await wait(() => render(<App />));
+    expect(axiosMock.get).toHaveBeenCalledTimes(1);
+    expect(axiosMock.get).toHaveBeenCalledWith(getStreetsEndpoint());
+  });
 });

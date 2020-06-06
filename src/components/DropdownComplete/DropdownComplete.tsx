@@ -8,12 +8,12 @@ interface Street {
 }
 
 interface Props {
-  allStreets: never[]
+  allStreets: Street[]
 }
 
 const DropdownComplete = (props: Props) => {
-  const [filteredStreets, setFilteredStreets] = useState([]);
-  const [selectedOptionValue, setSelectedOptionValue] = useState('');
+  const [filteredStreets, setFilteredStreets] = useState<Street[]>([]);
+  const [selectedOptionValue, setSelectedOptionValue] = useState<string>('');
   const [areResultsShown, setAreResultsShown] = useState(false);
 
   const handleOptionClick = (val: string) => {
