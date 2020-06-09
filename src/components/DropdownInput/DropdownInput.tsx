@@ -37,7 +37,7 @@ const DropdownInput = (props: Props) => {
       type="text"
       className='dropdown-input'
       placeholder="Type something..."
-      onChange={(e) => updateCurrentVal(e.target.value.trim())}
+      onChange={(e) => updateCurrentVal(e.target.value)}
       value={value}
     />
   );

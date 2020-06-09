@@ -22,7 +22,8 @@ const DropdownComplete = (props: Props) => {
   };
 
   const filterStreets = (str: string) => {
-    return props.allStreets.filter((o: Street) => o.street.includes(str));
+    const shavedStr = str.trim();
+    return props.allStreets.filter((o: Street) => o.street.includes(shavedStr));
   };
 
   const handleInput = (val: string) => {

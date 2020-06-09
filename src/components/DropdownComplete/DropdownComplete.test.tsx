@@ -31,7 +31,7 @@ describe('DropdownComplete ', () => {
     expect(inputEl).toBeInTheDocument();
   });
 
-  it('renders select options on input change', async () => {
+  it('renders select options on input change', () => {
     fireEvent.change(inputEl, { target: { value: 'First' } });
 
     act(() => {
@@ -50,7 +50,7 @@ describe('DropdownComplete ', () => {
     expect(options[0]).toHaveTextContent('First street');
   });
 
-  it('does not update select options on every user input', async () => {
+  it('does not update select options on every user input', () => {
     fireEvent.change(inputEl, { target: { value: 'First' } });
 
     act(() => {
